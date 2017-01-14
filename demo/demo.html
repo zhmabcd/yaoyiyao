@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
-    <title>Shake Demo</title>
+    <title>摇一摇就有汉服哟</title>
     <style>
+        a,abbr,address,article,aside,audio,b,blockquote,body,canvas,caption,cite,code,dd,del,details,dfn,dialog,div,dl,dt,em,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,p,pre,q,samp,section,small,span,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,ul,var,video
+        {
+            margin: 0;
+            padding: 0;
+        }
+        .contain{
+            background: #383a4c;
+        }
         .hand{
             position: absolute;
-            top: 50%;
+            top: 45%;
             left: 50%;
             width: 150px;
             height: 150px;
@@ -30,23 +38,76 @@
             -webkit-animation: lasting 1s linear infinite;
         }
 
-        #prize{
-            position: absolute;
-            width: 100%;
-            top: 70%;
-            text-align: center;
-            visibility: hidden;
+
+        /*#prize{*/
+            /*position: absolute;*/
+            /*width: 100%;*/
+            /*top: 70%;*/
+            /*text-align: center;*/
+            /*visibility: hidden;*/
+        /*}*/
+        .shake_ui{
+            margin-top:23%;
+            margin-left:26%;
+
         }
+        /*#prize{*/
+            /*width: 80%;*/
+            /*height: 50px;*/
+            /*background: #b6b6b6;*/
+            /*margin-top: 5%;*/
+            /*margin-left: 15%;*/
+            /*font-size: 18px;*/
+            /*text-align: center;*/
+        /*}*/
+        /*#shakehidden{*/
+            /*width: 80%;*/
+            /*margin-top: 5%;*/
+            /*margin-left: 15%;*/
+            /*font-size: 19px;*/
+            /*text-align: center;*/
+        /*}*/
+        #prize{
+            position:absolute;
+            margin-top: 5%;
+            margin-left: 15%;
+            left:-30px;
+            width:80%;
+            height:40px;
+            background:#424458;
+            border:1px solid rgba(2, 2, 2, 0.28);
+            border-radius:3px;
+            dropShadow:#343546;
+            padding:10px;
+            line-height:25px;
+            text-aligh:center;
+            color:#ec6941;
+            corner:10px;
+            padding-top:18px;
+        }
+
     </style>
 </head>
-<body>
+<body class="contain">
+<div
+        style="background: #009ee9; color: #fff; height: 45px; width: 100%;font-size:19px;font-weight:blod;text-align:center;line-height:40px;">Car IoT Demo
+</div>
     <p id="log"></p>
-    <p id="log2">仅仅能摇3次！！！</p>
     <p id="log3"></p>
     <p id="log4"></p>
     <p id="log5"></p>
-    <img id="hand" class="hand" src="images/hand.png">
-    <p id="prize"></p>
+    <div class="shake_ui">
+        <img id="hand" src="images/shakephone.png">
+        <br>
+        <br>
+        <br>
+    </div>
+    <div id="prize" >
+
+        <p id="log2" style="color: #ecf0f1 ;text-align: center">只有3次机会哦，把握好！！！</p>
+        <p id="addMore" style="color: #ecf0f1 ;text-align: center;display: none">
+            蓝瘦，555，没有机会了<a href="tel:15700112940" style="color: blue">点我试试？</a></p>
+    </div>
     <script src="http://map.baidu.com/yyfm/yyshake/1.0.0/js/yyshake.min.js"></script>
     <!--<script src="../yyshake.min.js"></script>-->
     <script>
@@ -95,7 +156,7 @@
             });
             ele.className = os.join(" ");
         }
-       
+
         function $(s){
             var ss = s.split(" ");
             if(ss[ss.length - 1].indexOf("#") ===0) {
@@ -105,7 +166,6 @@
             }
         }
 
-        var prizes = ["香蕉女郎的飞吻","泰国歌舞团门票一张","东山鸭头一两","50元移动充值卡","300元糯米代金券"];
         var hand = $("#hand");
         var prize = $("#prize");
         var time = 0;
@@ -119,12 +179,25 @@
                 end: function() {
                     removeClass(hand, "lasting");
                     // alert(hand.className);
-                    var index = Math.floor(Math.random()*(prizes.length));
-                    prize.innerHTML = "恭喜您获得了：" + prizes[index] + "!";
+                    if (time=0){
+                        document.getElementById("log2").innerHTML="还有2次机会，加油";
+                        prize.innerHTML = "恭喜您获得了：一个温暖的拥抱!";
+                    }
+                    if (time=1){
+                        document.getElementById("log2").innerHTML="还有1次机会，加油";
+                        prize.innerHTML = "啥都没有，再接再厉!";
+                    }
+                    if (time=2){
+                        prize.innerHTML = "恭喜您获得了:获得了一套汉服!";
+                        prize.innerHTML ='<a href="tel:15700112940" style="color: blue">汉服领取处</a>';
+                    }
+                    if (prizes[index])
                     prize.style.visibility = "visible";
                     time++;
                     if (time >= 3) {
-                        yyshake.stop();
+                       // yyshake.stop();
+                        document.getElementById("log2").style.display="none";
+                        document.getElementById("addMore").style.display="block";
                     }
                 }
             }
@@ -134,5 +207,8 @@
             alert("DeviceOrientation Not Supported!");
         }
     </script>
+
+
+
 </body>
 </html>
