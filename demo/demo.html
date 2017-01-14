@@ -87,7 +87,7 @@
         <br>
     </div>
     <div id="prize" >
-        <p id="log2" style="color: #ecf0f1 ;text-align: center;display: none">只有3次机会哦，把握好！！！</p>
+        <p id="log2" style="color: #ecf0f1 ;text-align: center;">只有3次机会哦，把握好！！！</p>
 
     </div>
     <script src="http://map.baidu.com/yyfm/yyshake/1.0.0/js/yyshake.min.js"></script>
@@ -162,7 +162,6 @@
                 end: function() {
                     removeClass(hand, "lasting");
                     // alert(hand.className);
-                    prize.innerHTML = "";
                     var index = Math.floor(Math.random()*(prizes.length));
                     prize.innerHTML = "恭喜您获得了：" + prizes[index] + "!";
                     if(index==2){
