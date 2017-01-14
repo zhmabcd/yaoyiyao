@@ -127,7 +127,7 @@
         }
     }
 
-    var prizes = ["一个温暖的拥抱!","啥都没有，再接再厉!","获得了一套汉服","50元移动充值卡","钻石一枚"];
+    var prizes = ["一个温暖的拥抱！","啥都没有，再接再厉!","获得了一套汉服！","钻石一枚！"];
     var hand = $("#hand");
     var prize = $("#prize");
     var time = 0;
@@ -147,11 +147,8 @@
                     prize.innerHTML +='<a href="tel:15700112940" style="color: #fff"><strong>汉服领取处</strong></a>';
 
                 }
+               
                 if(index==3){
-                    prize.innerHTML +='<a href="tel:15700112940" style="color: #fff"><strong>充值卡领取处</strong></a>';
-
-                }
-                if(index==4){
                     prize.innerHTML +='<a href="tel:15700112940" style="color: #fff"><em>哈哈，不给！</em></a>';
 
                 }
