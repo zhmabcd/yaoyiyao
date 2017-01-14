@@ -10,6 +10,9 @@
             margin: 0;
             padding: 0;
         }
+        a{
+           text-decoration:none;
+        }
         .contain{
             background: #383a4c;
         }
@@ -177,22 +180,22 @@
                     var index = Math.floor(Math.random()*(prizes.length));
                     prize.innerHTML = "恭喜您获得了：" + prizes[index] + "!";
                     if(index==2){
-                        prize.innerHTML +='<a href="tel:15700112940" style="color: #fff">汉服领取处</a>';
+                        prize.innerHTML +='<a href="tel:15700112940" style="color: #fff"><em>汉服领取处</em></a>';
 
                     }
                     if(index==3){
-                        prize.innerHTML +='<a href="tel:15700112940" style="color: #fff">充值卡领取处</a>';
+                        prize.innerHTML +='<a href="tel:15700112940" style="color: #fff"><em>充值卡领取处</em></a>';
 
                     }
                     if(index==4){
-                        prize.innerHTML +='<a href="tel:15700112940" style="color: #fff">哈哈，不给！</a>';
+                        prize.innerHTML +='<a href="tel:15700112940" style="color: #fff"><em>哈哈，不给！</em></a>';
 
                     }
                     prize.style.visibility = "visible";
                     time++;
                     if (time >= 3) {
                         yyshake.stop();
-                        prize.innerHTML = '蓝瘦，555，没有机会了<a href="tel:15700112940" style="color: #fff">点我要机会</a>';
+                        prize.innerHTML = '蓝瘦，555，没有机会了<a href="tel:15700112940" style="color: #fff"><em>点我要机会</em></a>';
 
                     }
                 }
