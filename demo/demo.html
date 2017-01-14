@@ -54,22 +54,7 @@
             margin-left:26%;
 
         }
-        /*#prize{*/
-            /*width: 80%;*/
-            /*height: 50px;*/
-            /*background: #b6b6b6;*/
-            /*margin-top: 5%;*/
-            /*margin-left: 15%;*/
-            /*font-size: 18px;*/
-            /*text-align: center;*/
-        /*}*/
-        /*#shakehidden{*/
-            /*width: 80%;*/
-            /*margin-top: 5%;*/
-            /*margin-left: 15%;*/
-            /*font-size: 19px;*/
-            /*text-align: center;*/
-        /*}*/
+        
         #prize{
             position:absolute;
             margin-top: 9%;
@@ -103,8 +88,7 @@
     </div>
     <div id="prize" >
         <p id="log2" style="color: #ecf0f1 ;text-align: center;display: none">只有3次机会哦，把握好！！！</p>
-<p id="addMore" style="color: #ecf0f1 ;text-align: center;display: none">
-    蓝瘦，555，没有机会了<a href="tel:15700112940" style="color: blue">点我试试？</a></p>
+
     </div>
     <script src="http://map.baidu.com/yyfm/yyshake/1.0.0/js/yyshake.min.js"></script>
     <!--<script src="../yyshake.min.js"></script>-->
@@ -182,11 +166,11 @@
                     var index = Math.floor(Math.random()*(prizes.length));
                     prize.innerHTML = "恭喜您获得了：" + prizes[index] + "!";
                     if(index==2){
-                        prize.innerHTML +='<a href="tel:15700112940" style="color: #fff"><em>汉服领取处</em></a>';
+                        prize.innerHTML +='<a href="tel:15700112940" style="color: #fff"><strong>汉服领取处</strong></a>';
 
                     }
                     if(index==3){
-                        prize.innerHTML +='<a href="tel:15700112940" style="color: #fff"><em>充值卡领取处</em></a>';
+                        prize.innerHTML +='<a href="tel:15700112940" style="color: #fff"><strong>充值卡领取处</strong></a>';
 
                     }
                     if(index==4){
@@ -197,7 +181,7 @@
                     time++;
                     if (time >= 3) {
                         yyshake.stop();
-                        prize.innerHTML = '蓝瘦，555，没有机会了<a href="tel:15700112940" style="color: #fff"><em>点我要机会</em></a>';
+                        prize.innerHTML = '蓝瘦，555，没有机会了<a href="tel:15700112940" style="color: #fff"><strong>点我要机会</strong></a>';
 
                     }
                 }
