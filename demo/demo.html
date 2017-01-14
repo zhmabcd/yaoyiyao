@@ -124,7 +124,7 @@
         }
     }
 
-    var prizes = ["一个温暖的拥抱！","啥都没有，再接再厉!","获得了一套汉服！","钻石一枚！"];
+    var prizes = ["一个温暖的拥抱","啥都没有,再接再厉","获得了一套汉服","钻石一枚"];
     var hand = $("#hand");
     var prize = $("#prize");
     var time = 0;
@@ -146,14 +146,14 @@
                 }
                
                 if(index==3){
-                    prize.innerHTML +='<a href="tel:15700112940" style="color: #fff"><em>哈哈，不给！</em></a>';
+                    prize.innerHTML +='<a href="tel:15700112940" style="color: #fff"><em>哈哈,不给！</em></a>';
 
                 }
                 prize.style.visibility = "visible";
                 time++;
                 if (time >= 3) {
                     yyshake.stop();
-                    prize.innerHTML = '蓝瘦，555，没有机会了<a href="tel:15700112940" style="color: #fff"><strong>点我要机会</strong></a>';
+                    prize.innerHTML = '蓝瘦,555,没有机会了!<a href="tel:15700112940" style="color: #fff"><strong>点我要机会</strong></a>';
 
                 }
             }
