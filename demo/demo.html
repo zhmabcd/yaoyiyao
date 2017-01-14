@@ -43,15 +43,16 @@
             margin-left: auto;
             margin-right: auto;
             width:84%;
-            height:60px;
+            height:40px;
             background:#424458;
             border:1px solid rgba(2, 2, 2, 0.28);
             border-radius:3px;
             dropShadow:#343546;
-            line-height:60px;
+            line-height:40px;
             color:#ec6941;
             corner:10px;
-            padding: 15px;
+            padding:14px 0px;
+
         }
 
     </style>
@@ -61,7 +62,7 @@
 <p id="log3"></p>
 <p id="log4"></p>
 <p id="log5"></p>
-    <img id="hand" class="hand" src="images/hand.png">
+<img id="hand" class="hand" src="images/hand.png">
 
 <div id="prize" style="text-align: center" >
     只有3次机会哦，把握好！！！
@@ -124,7 +125,7 @@
         }
     }
 
-    var prizes = ["一个温暖的拥抱","啥都没有,再接再厉","获得了一套汉服","钻石一枚"];
+    var prizes = ["一个温暖的拥抱","啥都没有,再接再厉","一套汉服","钻石一枚"];
     var hand = $("#hand");
     var prize = $("#prize");
     var time = 0;
@@ -144,7 +145,7 @@
                     prize.innerHTML +='<a href="tel:15700112940" style="color: #fff"><strong>汉服领取处</strong></a>';
 
                 }
-               
+
                 if(index==3){
                     prize.innerHTML +='<a href="tel:15700112940" style="color: #fff"><em>哈哈,不给！</em></a>';
 
