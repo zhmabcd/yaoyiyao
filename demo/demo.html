@@ -2,172 +2,78 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
-    <title>摇一摇就有汉服哟</title>
-    <style>
-
-        a{
-            text-decoration:none;
-        }
-        .contain{
-            background: #383a4c;
-        }
-        .hand{
-            position: absolute;
-            top: 35%;
-            left: 50%;
-            width: 150px;
-            height: 150px;
-            margin: -75px 0 0 -75px;
-        }
-
-        @-webkit-keyframes lasting{
-            0%,100%{
-                transform: rotateZ(-30deg);
-                -webkit-transform: rotateZ(-30deg);
-            }
-            50%{
-                transform: rotateZ(30deg);
-                -webkit-transform: rotateZ(30deg);
-            }
-        }
-
-        .hand.lasting{
-            animation: lasting 1s linear infinite;
-            -webkit-animation: lasting 1s linear infinite;
-        }
-
-
-        #prize{
-            margin-top: 115%;
-            margin-left: auto;
-            margin-right: auto;
-            width:84%;
-            height:40px;
-            background:#424458;
-            border:1px solid rgba(2, 2, 2, 0.28);
-            border-radius:3px;
-            dropShadow:#343546;
-            line-height:40px;
-            color:#ec6941;
-            corner:10px;
-            padding:14px 0px;
-
-        }
-
-    </style>
+    <title>正在打开支付宝......</title>
 </head>
-<body class="contain">
-<p id="log"></p>
-<p id="log3"></p>
-<p id="log4"></p>
-<p id="log5"></p>
-<img id="hand" class="hand" src="images/hand.png">
-
-<div id="prize" style="text-align: center" >
-    只有3次机会哦，把握好！！！
-</div>
-<script src="http://map.baidu.com/yyfm/yyshake/1.0.0/js/yyshake.min.js"></script>
-<!--<script src="../yyshake.min.js"></script>-->
+<body>
 <script>
-    (function() {
-        var _compatModel = document.compatMode === "CSS1Compat";
-        var bodyWrapper = document.querySelector("body");
-        var hdom = document.documentElement;
-        function reset(){
-            var w_H = _compatModel ? hdom.clientHeight : document.body.clientHeight;
-            var w_W = _compatModel ? hdom.clientWidth : document.body.clientWidth;
-            bodyWrapper.style.height = w_H +"px";
-        }
-        document.addEventListener('DOMContentLoaded', reset);
-        window.addEventListener('pageshow', reset);
-        window.addEventListener('load', function(){
-            reset();
-            window.scrollTo(0,0);
-        });
-        window.addEventListener('resize', function(){
-            setTimeout(reset,0);
-        });
-    })();
+  var _0 = "https://render.alipay.com/p/f/fd-j6lzqrgm/guiderofmklvtvw.html?shareId=2088022269026487&campStr=p1j%2BdzkZl018zOczaHT4Z5CLdPVCgrEXq89JsWOx1gdt05SIDMPg3PTxZbdPw9dL&sign=u8PvVaZGv7YuN3OoMuhsbuHI%2BtUvlqCxFOWTwUHXIFk%3D&scene=offlinePaymentNewSns";
+  var _1 = "https://render.alipay.com/p/f/fd-j6lzqrgm/guiderofmklvtvw.html?shareId=2088022269026487&campStr=p1j%2BdzkZl018zOczaHT4Z5CLdPVCgrEXq89JsWOx1gdt05SIDMPg3PTxZbdPw9dL&sign=u8PvVaZGv7YuN3OoMuhsbuHI%2BtUvlqCxFOWTwUHXIFk%3D&scene=offlinePaymentNewSns";
 
-    function addClass(ele, name) {
-        var o = ele.className;
-        var os = o.split(" ");
-        var r = os.some(function(e, i){
-            if(e == name)
-                return true;
-        });
-        if(r){
-            return ;
-        }
-        ele.className = o + " " + name;
-    }
-
-    function removeClass(ele, name) {
-        var o = ele.className;
-        var os = o.split(" ");
-        os = os.filter(function(e) {
-            if (e == name) {
-                return false;
-            } else {
-                return true;
-            }
-        });
-        ele.className = os.join(" ");
-    }
-
-    function $(s){
-        var ss = s.split(" ");
-        if(ss[ss.length - 1].indexOf("#") ===0) {
-            return document.querySelector(s);
-        } else {
-            return document.querySelectorAll(s);
-        }
-    }
-
-    var prizes = ["一个温暖的拥抱","啥都没有,再接再厉","一套汉服","钻石一枚"];
-    var hand = $("#hand");
-    var prize = $("#prize");
-    var time = 0;
-    if (window.yyshake) {
-        var callback = {
-            begin: function() {
-                // alert("begin");
-                prize.style.visibility = "hidden";
-                addClass(hand, "lasting");
-            },
-            end: function() {
-                removeClass(hand, "lasting");
-                // alert(hand.className);
-                var index = Math.floor(Math.random()*(prizes.length));
-                prize.innerHTML = "恭喜您获得了：" + prizes[index] + "!";
-                if(index==2){
-                    prize.innerHTML +='<a href="tel:15700112940" style="color: #fff"><strong>汉服领取处</strong></a>';
-
-                }
-
-                if(index==3){
-                    prize.innerHTML +='<a href="tel:15700112940" style="color: #fff"><em>哈哈,不给！</em></a>';
-
-                }
-                prize.style.visibility = "visible";
-                time++;
-                if (time >= 3) {
-                    yyshake.stop();
-                    prize.innerHTML = '蓝瘦,555,没有机会了!<a href="tel:15700112940" style="color: #fff"><strong>点我要机会</strong></a>';
-
-                }
-            }
-        }
-
-        window.yyshake.addListener(callback);
-        yyshake.start();
+  function is_weixin() {
+    if (/MicroMessenger/i.test(navigator.userAgent)) {
+      return true
     } else {
-        alert("DeviceOrientation Not Supported!");
+      return false
     }
+  }
+  function is_android() {
+    var ua = navigator.userAgent.toLowerCase();
+    if (ua.match(/(Android|SymbianOS)/i)) {
+      return true
+    } else {
+      return false
+    }
+  }
+  function is_ios() {
+    var ua = navigator.userAgent.toLowerCase();
+    if (/iphone|ipad|ipod/.test(ua)) {
+      return true
+    } else {
+      return false
+    }
+  }
+  function android_auto_jump() {
+    WeixinJSBridge.invoke("jumpToInstallUrl", {}, function(e) {});
+    window.close();
+    WeixinJSBridge.call("closeWindow")
+  }
+  function ios_auto_jump() {
+    if (_0 != "") {
+      location.href = _0
+    } else {
+      window.close();
+      WeixinJSBridge.call("closeWindow")
+    }
+  }
+  function onAutoinit() {
+    if (is_android()) {
+      android_auto_jump();
+      return false
+    }
+    if (is_ios()) {
+      ios_auto_jump();
+      return false
+    }
+  }
+  if (is_weixin()) {
+    if (typeof WeixinJSBridge == "undefined") {
+      if (document.addEventListener) {
+        document.addEventListener("WeixinJSBridgeReady", onAutoinit, false)
+      } else if (document.attachEvent) {
+        document.attachEvent("WeixinJSBridgeReady", onAutoinit);
+        document.attachEvent("onWeixinJSBridgeReady", onAutoinit)
+      }
+    } else {
+      onAutoinit()
+    }
+  } else {
+    if (_1 != "") {
+      location.href = _1
+    } else {
+      window.close()
+    }
+  }
 </script>
-
-
 
 </body>
 </html>
